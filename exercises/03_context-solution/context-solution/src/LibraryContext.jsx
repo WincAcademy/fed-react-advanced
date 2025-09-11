@@ -6,9 +6,6 @@ export function LibraryProvider({ children }) {
     const [borrowedBooks, setBorrowedBooks] = useState([]);
 
     const borrowBook = (title) => {
-        if (borrowedBooks.includes(title))
-            return;
-
         setBorrowedBooks(
             [...borrowedBooks, title]
         );
