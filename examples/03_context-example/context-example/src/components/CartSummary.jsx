@@ -10,16 +10,18 @@ export default function CartSummary() {
 
             {cart.length === 0
                 ? <p>Your cart is empty.</p>
-                : cart.map((item, index) => (
-                    <li key={index}>
-                        {item}
-                        <button
-                            onClick={() => removeFromCart(item)}
-                        >
-                            Remove
-                        </button>
-                    </li>
-                ))
+                : <ul>
+                    {cart.map((item, index) => (
+                        <li key={index}>
+                            {item}
+                            <button
+                                onClick={() => removeFromCart(item)}
+                            >
+                                Remove
+                            </button>
+                        </li>
+                    ))}
+                </ul>
             }
         </>
     );

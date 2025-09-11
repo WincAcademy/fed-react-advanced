@@ -9,6 +9,7 @@ export default function ProductList() {
         <div>
             <h2>Products</h2>
             
+            <ul>
             {products.map((p) => (
                 <li key={p}>
                     {p}
@@ -20,6 +21,7 @@ export default function ProductList() {
                     </button>
                 </li>
             ))}
+            </ul>
         </div>
     );
 }
