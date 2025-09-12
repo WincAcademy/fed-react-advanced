@@ -19,7 +19,7 @@ export const App = () => {
     };
 
     const resetAge = () => {
-        setAge(() => createInitialAgeState());
+        setAge(createInitialAgeState);
     };
 
     return (
