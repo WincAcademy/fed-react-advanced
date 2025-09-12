@@ -7,7 +7,7 @@ const createInitialAgeState = () => {
 
 export const App = () => {
     const [greeting, setGreeting] = useState("Hello");
-    const [age, setAge] = useState(() => createInitialAgeState());
+    const [age, setAge] = useState(createInitialAgeState);
 
     const updateGreeting = () => {
         setGreeting((g) => g + "!");

@@ -10,7 +10,7 @@ export const App = () => {
     return (
         <>
             <h1>React Hooks Exercise Starter</h1>
-            
+
             <button onClick={reset}>Reset Person</button>
             <Person key={version} />
         </>
@@ -24,7 +24,7 @@ const createInitialAgeState = () => {
 
 const Person = () => {
     const [greeting, setGreeting] = useState("Hello");
-    const [age, setAge] = useState(() => createInitialAgeState());
+    const [age, setAge] = useState(createInitialAgeState);
 
     const updateGreeting = () => {
         setGreeting((g) => g + "!");
