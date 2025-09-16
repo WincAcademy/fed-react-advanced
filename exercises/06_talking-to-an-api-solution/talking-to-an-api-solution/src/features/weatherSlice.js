@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { sunnyWeather } from "../utils/data";
 
 const initialState = {
-    currentWeather: sunnyWeather,
+    currentWeather: null,
 };
 
 const weatherSlice = createSlice({
