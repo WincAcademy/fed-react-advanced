@@ -5,7 +5,7 @@ import {
     rainyWeather
 } from './utils/data'
 import { useSelector, useDispatch } from "react-redux";
-import { setWeather } from "./weatherSlice";
+import { setWeather } from "./features/weatherSlice";
 import {
     Heading,
     Center,
