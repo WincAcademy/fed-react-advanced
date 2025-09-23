@@ -15,6 +15,9 @@ export const App = () => {
     const weather = useSelector(
         (state) => state.weather.currentWeather
     );
+    const locationName = useSelector(
+        (state) => state.location.name
+    );
     const locationCoordinates = useSelector(
         (state) => state.location.coordinates
     );
@@ -55,7 +58,14 @@ export const App = () => {
 
                 <LocationSearch />
 
-                { (locationCoordinates && weather) && <WeatherIcon weather={weather} /> }
+                <Heading
+                    size="md"
+                    textAlign="center"
+                    mt="6"
+                >
+                    {locationName}
+                </Heading>
+                { weather && <WeatherIcon weather={weather} /> }
             </Stack>
         </Center>
     )
