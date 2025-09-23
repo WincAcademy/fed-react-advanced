@@ -1,31 +1,37 @@
-import { useRef } from "react";
-import { Button, Input, Text, HStack, VStack } from "@chakra-ui/react";
+import { useState } from 'react';
+import { Input, Text, HStack, VStack } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
-import { setLocationCoordinates } from "../features/locationSlice";
+import {
+    setLocationName,
+    setLocationCoordinates
+} from "../features/locationSlice";
 
 export const LocationSearch = () => {
     const dispatch = useDispatch();
     const locationName = useSelector(
         (state) => state.location.name
     );
-    const locationCoordinates = useSelector(
-        (state) => state.location.coordinates
-    );
-    const locationInput = useRef(null);
+    const [inputText, setInputText] = useState('');
 
-    const fetchCoordinates = async () => {
-        const newLocationName = locationInput.current.value;
+    const fetchCoordinates = async (event) => {
+        setInputText(event.target.value);
+
         const response = await fetch(
-            `https://geocoding-api.open-meteo.com/v1/search?name=${newLocationName}`
+            `https://geocoding-api.open-meteo.com/v1/search?name=${inputText}`
         );
         const json = await response.json();
-
-        if (json.results.length === 0) {
-            console.error("Not a valid location!");
+        if (!json.results || json.results.length === 0) {
+            setLocationName('');
+            setLocationCoordinates(null);
             return;
         }
 
         const location = json.results[0];
+        const newLocationName = `${location.name}, ${location.country}`;
+        if (locationName === newLocationName)
+            return;
+
+        dispatch(setLocationName(newLocationName));
         dispatch(setLocationCoordinates({
             longitude: location.longitude,
             latitude: location.latitude
@@ -37,19 +43,14 @@ export const LocationSearch = () => {
             <HStack>
                 <Input
                     placeholder="City name (e.g. Amsterdam)"
-                    defaultValue={locationName}
-                    ref={locationInput}
+                    value={inputText}
+                    onChange={fetchCoordinates}
                 />
-
-                <Button onClick={fetchCoordinates}>
-                    Check
-                </Button>
             </HStack>
 
-            { locationCoordinates && (
+            { locationName && (
                 <Text fontSize={12}>
-                    Longitude: {locationCoordinates.longitude}, 
-                    Latitude: {locationCoordinates.latitude}
+                    {locationName}
                 </Text>
             )}
         </VStack>

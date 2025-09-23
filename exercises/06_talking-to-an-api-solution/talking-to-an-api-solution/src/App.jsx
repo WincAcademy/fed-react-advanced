@@ -20,6 +20,7 @@ export const App = () => {
     );
 
     useEffect(() => {
+        let ignore = false;
         if (!locationCoordinates)
             return;
 
@@ -29,10 +30,16 @@ export const App = () => {
             );
             const json = await response.json();
 
-            const weatherObject = parseWeather(json);
-            dispatch(setWeather(weatherObject));
+            if (!ignore) {
+                const weatherObject = parseWeather(json);
+                dispatch(setWeather(weatherObject));
+            }
         };
         fetchWeather();
+
+        return () => {
+            ignore = true;
+        };
     }, [locationCoordinates]);
 
     return (
@@ -48,7 +55,7 @@ export const App = () => {
 
                 <LocationSearch />
 
-                { weather && <WeatherIcon weather={weather} /> }
+                { (locationCoordinates && weather) && <WeatherIcon weather={weather} /> }
             </Stack>
         </Center>
     )
