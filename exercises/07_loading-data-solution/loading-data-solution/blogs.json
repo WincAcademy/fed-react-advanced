@@ -4,6 +4,16 @@
             "id": 0,
             "title": "Hello World!",
             "body": "This is an example post."
+        },
+        {
+            "id": 1,
+            "title": "Another post",
+            "body": "I just could not resist!"
+        },
+        {
+            "id": 2,
+            "title": "Hey friends!",
+            "body": "The first one to comment gets to be my friend!"
         }
     ],
     "comments": [
@@ -11,6 +21,11 @@
             "id": 0,
             "postId": 0,
             "comment": "Wow, what an amazing post!"
+        },
+        {
+            "id": 1,
+            "postId": 1,
+            "comment": "And I could not resist placing a comment!"
         }
     ]
 }
