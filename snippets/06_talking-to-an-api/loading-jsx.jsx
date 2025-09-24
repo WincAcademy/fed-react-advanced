@@ -6,16 +6,18 @@ return loading
     // Otherwise, we show our regular UI (which relies on the data)
     : (
         <>
-            <div className='notes-container'>
-                {notes.map((note) => (
-                    <div key={note.id}>
-                        <p>{note.text}</p>
-                        <button onClick={() => deleteNote(note.id)}>
-                            X
-                        </button>
-                    </div>
-                ))}
-            </div>
+            {notes.length > 0 
+                ? <div className='notes-container'>
+                    {notes.map((note) => (
+                        <div key={note.id}>
+                            <p>{note.text}</p>
+                            <button onClick={() => deleteNote(note.id)}>
+                                X
+                            </button>
+                        </div>
+                    ))}
+                </div>
+                : <p>No notes available</p>}
 
             <textarea
                 placeholder='Type your note here'

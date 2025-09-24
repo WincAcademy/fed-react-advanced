@@ -1,5 +1,5 @@
 if (error)
-    return <h1 color='red'>{error}</h1>;
+    return <h1>{error}</h1>;
 
 if (loading)
     return <h1>Loading..</h1>;

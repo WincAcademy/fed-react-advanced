@@ -1,7 +1,8 @@
 {
-  "notes": [
-    {
-      "id": 2
-    }
-  ]
+    "notes": [
+        {
+            "text": "Finish the React Advanced course.",
+            "id": 0
+        }
+    ]
 }
