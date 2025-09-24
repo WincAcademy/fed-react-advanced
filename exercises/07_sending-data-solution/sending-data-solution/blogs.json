@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "title": "Hello World!",
+      "body": "This is an example post."
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "postId": 0,
+      "comment": "Wow, what an amazing post!"
+    }
+  ]
+}
