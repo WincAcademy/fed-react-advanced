@@ -11,7 +11,6 @@ export function App() {
             'http://localhost:3000/notes',
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     text: currentText
                 })
