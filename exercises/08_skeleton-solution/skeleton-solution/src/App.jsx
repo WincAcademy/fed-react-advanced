@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Container, Heading } from "@chakra-ui/react";
 import MovieList from "./components/MovieList";
 import ReviewForm from "./components/ReviewForm";
-import MovieSkeleton from "./components/MovieSkeleton";
 
 export default function App() {
     const [movies, setMovies] = useState([]);
@@ -34,19 +33,12 @@ export default function App() {
         <Container maxW="container.xl" py={6}>
             <Heading fontSize={'2xl'} mb={6}>Winc Movie Rater</Heading>
 
-            {loading ? (
-                <SimpleGrid columns={[1, 2, 3]} gap={6} minChildWidth="250px">
-                    {Array.from({ length: 6 }).map((_, i) => (
-                        <MovieSkeleton key={i} />
-                    ))}
-                </SimpleGrid>
-            ) : (
-                <MovieList
-                    movies={movies}
-                    ratings={ratings}
-                    reviewFn={setReviewing}
-                />
-            )}
+             <MovieList
+                movies={movies}
+                ratings={ratings}
+                reviewFn={setReviewing}
+                loading={loading}
+            />
 
             <ReviewForm
                 movie={reviewing}
