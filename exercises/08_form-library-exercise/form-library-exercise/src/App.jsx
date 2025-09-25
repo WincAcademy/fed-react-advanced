@@ -43,7 +43,7 @@ export default function App() {
 
     return (
         <Container maxW="container.xl" py={6}>
-            <Heading fontSize={'2xl'} mb={6}>Winc Movie Website</Heading>
+            <Heading fontSize={'2xl'} mb={6}>Winc Movie Rater</Heading>
 
             {loading ? (
                 <Center>
