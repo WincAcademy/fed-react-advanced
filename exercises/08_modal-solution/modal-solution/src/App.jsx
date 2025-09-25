@@ -45,18 +45,16 @@ export default function App() {
                 />
             )}
 
-            {reviewing && (
-                <ReviewForm
-                    movie={reviewing}
-                    cancel={() => {
-                        setReviewing(null);
-                    }}
-                    finish={() => {
-                        setReviewing(null);
-                        fetchData();
-                    }}
-                />
-            )}
+            <ReviewForm
+                movie={reviewing}
+                cancel={() => {
+                    setReviewing(null);
+                }}
+                finish={() => {
+                    setReviewing(null);
+                    fetchData();
+                }}
+            />
         </Container>
     );
 }
