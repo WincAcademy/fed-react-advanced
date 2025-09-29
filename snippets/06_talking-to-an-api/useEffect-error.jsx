@@ -1,23 +1,27 @@
 const [error, setError] = useState(null);
 
-const createNote = async () => {
-    const result = await fetch(
-        'http://localhost:3000/notes',
-        {
-            method: 'POST',
-            body: JSON.stringify({
-                text: currentText
-            })
-        }
-    );
-    if (!result.ok) {
-        // If the result was NOT succesful, set error
-        setError(`Could not create note: ${result.statusText}`);
-        return;
-    }
-    const json = await result.json();
-    const newId = json.id;
+const fetchNotes = async () => {
+    setLoading(true);
+    setError(null);
     
-    setCurrentText('');
-    setNotes([...notes, { id: newId, text: currentText }]);
+    // Wrap the request in a try-catch to catch any
+    // internal errors when making the request
+    try {
+        const response = await flakyFetch('http://localhost:3000/notes');
+
+        // Check if the request was succesful, we
+        // create and throw an error if this is not
+        // the case - this triggers the catch statement
+        if (!response.ok)
+            throw new Error(response.statusText);
+
+        const json = await response.json();
+        setNotes(json);
+    } catch (err) {
+        // Set error if any error was catched
+        setError(`Could not get notes: ${err.message}`);
+    } finally {
+        // Finally always reset the loading state
+        setLoading(false);
+    }
 };
