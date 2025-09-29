@@ -6,7 +6,7 @@ return (
                 <li key={user.id}>
                     {user.firstName} {user.lastName}
                 </li>
-            ))};
+            ))}
         </ul>
     </>
 );
