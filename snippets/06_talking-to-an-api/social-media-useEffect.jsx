@@ -8,4 +8,4 @@ useEffect(() => {
         console.log(json);
     };
     fetchData();
-});
+}, []);
