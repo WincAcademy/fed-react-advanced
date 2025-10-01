@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "The Shawshank Redemption",
-      "coverImage": "/images/ShawshankRedemptionMoviePoster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
       "authors": [
         "Tim Robbins",
         "Morgan Freeman",
@@ -15,7 +15,7 @@
     {
       "id": 2,
       "name": "Inception",
-      "coverImage": "/images/Inception_%282010%29_theatrical_poster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
       "authors": [
         "Leonardo DiCaprio",
         "Joseph Gordon-Levitt",
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "name": "The Dark Knight",
-      "coverImage": "/images/The_Dark_Knight_%282008_film%29.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
       "authors": [
         "Christian Bale",
         "Heath Ledger",
@@ -39,7 +39,7 @@
     {
       "id": 4,
       "name": "Pulp Fiction",
-      "coverImage": "/images/Pulp_Fiction_%281994%29_poster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg",
       "authors": [
         "John Travolta",
         "Samuel L. Jackson",
@@ -51,7 +51,7 @@
     {
       "id": 5,
       "name": "Fight Club",
-      "coverImage": "/images/Fight_Club_poster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
       "authors": [
         "Brad Pitt",
         "Edward Norton",
@@ -63,7 +63,7 @@
     {
       "id": 6,
       "name": "Forrest Gump",
-      "coverImage": "/images/Forrest_Gump_poster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
       "authors": [
         "Tom Hanks",
         "Robin Wright",
@@ -75,7 +75,7 @@
     {
       "id": 7,
       "name": "The Matrix",
-      "coverImage": "/images/The_Matrix.png",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png",
       "authors": [
         "Keanu Reeves",
         "Laurence Fishburne",
@@ -87,7 +87,7 @@
     {
       "id": 8,
       "name": "Gladiator",
-      "coverImage": "/images/Gladiator_%282000_film_poster%29.png",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_%282000_film_poster%29.png",
       "authors": [
         "Russell Crowe",
         "Joaquin Phoenix",
@@ -99,7 +99,7 @@
     {
       "id": 9,
       "name": "The Lord of the Rings: The Fellowship of the Ring",
-      "coverImage": "/images/Lord_Rings_Fellowship_Ring.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg",
       "authors": [
         "Elijah Wood",
         "Ian McKellen",
@@ -111,7 +111,7 @@
     {
       "id": 10,
       "name": "Interstellar",
-      "coverImage": "/images/Interstellar_film_poster.jpg",
+      "coverImage": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
       "authors": [
         "Matthew McConaughey",
         "Anne Hathaway",
