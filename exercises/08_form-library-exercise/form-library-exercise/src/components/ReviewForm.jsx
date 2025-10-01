@@ -5,6 +5,9 @@ export default function ReviewForm({ movie, cancel, finish }) {
     return (
         <>
             <h1>Review: {movie.name}</h1>
+
+            <p>A review form should be added here.</p>
+
             <Button onClick={cancel}>Back</Button>
         </>
     )
