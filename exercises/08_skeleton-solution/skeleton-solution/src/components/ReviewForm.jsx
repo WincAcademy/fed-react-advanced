@@ -29,14 +29,14 @@ export default function ReviewForm({ movie, cancel, finish }) {
     };
 
     return (
-        <Dialog.Root open={!movie} onOpenChange={cancel}>
+        <Dialog.Root open={movie} onOpenChange={cancel}>
         <Dialog.Backdrop />
         <Dialog.Positioner>
         <Dialog.Content>
             <Dialog.Header>Review: {movie?.name}</Dialog.Header>
             <form onSubmit={handleSubmit(onSubmit)}>
             <Dialog.Body>
-                <Field.Root invalid={!errors.rating} mt={2}>
+                <Field.Root invalid={errors.rating} mt={2}>
                 <Field.Label>Rating (1-5)</Field.Label>
                 <Input
                     type="number"
@@ -52,7 +52,7 @@ export default function ReviewForm({ movie, cancel, finish }) {
                 <Field.ErrorText>{errors.rating?.message}</Field.ErrorText>
                 </Field.Root>
 
-                <Field.Root invalid={!errors.comment} mt={4}>
+                <Field.Root invalid={errors.comment} mt={4}>
                 <Field.Label>Comment</Field.Label>
                 <Textarea
                     placeholder="Write your review..."
