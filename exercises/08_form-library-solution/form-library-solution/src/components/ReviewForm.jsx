@@ -31,7 +31,7 @@ export default function ReviewForm({ movie, cancel, finish }) {
         <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Review: {movie.name}</h1>
 
-        <Field.Root invalid={!!errors.rating} mt={4}>
+        <Field.Root invalid={!errors.rating} mt={4}>
             <Field.Label>Rating (1-5)</Field.Label>
             <Input
                 type="number"
@@ -47,7 +47,7 @@ export default function ReviewForm({ movie, cancel, finish }) {
             <Field.ErrorText>{errors.rating?.message}</Field.ErrorText>
         </Field.Root>
 
-        <Field.Root invalid={!!errors.comment} mt={4}>
+        <Field.Root invalid={!errors.comment} mt={4}>
             <Field.Label>Comment</Field.Label>
             <Textarea
                 placeholder="Write your review..."
